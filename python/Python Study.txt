@@ -1,0 +1,323 @@
+1. Reserved Words:
+
+false
+Class
+return
+is
+finally
+None
+if 
+for
+lambda
+continue
+true
+def
+from
+while
+nonlocal
+and
+del
+global
+not
+with
+as 
+elif
+try
+or
+yield
+assert
+else
+import
+pass
+break
+except
+in 
+raise
+
+2. Sequential, Repeated, Conditional Code:
+
+3. Operators:
+
++, -, *, /, ** - power, % - remainder
+
+Order of evaluation:
+
+x = 1 + 2 * 3 - 4 / 5 ** 3
+
+1. Paranthesis
+2. Power
+3. Division/Multiplication
+4. Addition/Subtraction
+5. Left to right
+
+Snippet 1:
+
+x = 5 + 6
+print(x)
+
+o/p: 11
+
+Snippet 2:
+
+x = 'hello ' + 'there'
+print(x)
+
+o/p: hello there
+
+Snippet 3:
+x = 'hello ' + 'there'
+x = x + 1
+print(x)
+
+O/p: Error converting 'str' to 'int' implicitly.
+
+Snippet 4: 
+
+x = 1
+Type(x) --> o/p: <class 'int'>
+
+x = 'hello ' + 'there'
+Type(x) --> o/p: <class 'str'>
+
+Type(1.0) --> o/p: <class 'float'>
+
+----------------- Type Conversions: --------------
+
+print(float(99) + 100) --> o/p: 199.0
+
+x = 100
+y = float(x) + 1  --> o/p: 101.0
+type(y) --> o/p: <class 'float'>
+
+Snippet:
+
+sval = '123'
+val = int(sval) + 1   --> sval converted into integer from string.
+print(val) 
+
+--> o/p: 124
+
+
+-------- Functions: -------
+
+1. Input() - used to read data from user and return the data as string and assign it to variable.
+
+name = input('who are you?')
+print('Welcome', name)
+
+o/p:
+
+who are you?
+Subash
+Welcome Subash
+
+, - in print will be used for multiple printing and it will give spaces by default.
+
+
+Comments:
+
+# is used for comment in python.
+
+
+Conditional Statements:
+
+x = 5
+if x<10:
+   print('Smaller')
+if x>20:
+   print('Bigger')
+print('Finish')
+
+Indenting --> 4 spaces to get block statements under particular group.
+
+Comparison Operators:
+
+>, <, >=, <=, ==, !=
+
+
+If, Else-If, Else:
+
+x=5
+if x<2:
+   print ('Small')
+elif x<10:
+   print ('less than 10')
+else:
+   print ('Some value')
+
+
+Try, Except Statement:
+	
+astr = 'Hello Bob'
+try:
+    istr = int(astr)
+except:
+    istr = -1
+
+print('First', istr)
+
+astr = '123'
+try:
+    istr = int(astr)
+except:
+    istr = -1
+
+print('Second', istr)
+
+o/p:
+
+First -1
+Second 123
+
+
+--------------- Functions: --------------
+
+Snippet:
+def print_lyrics():
+    print("Sample Function")
+
+print_lyrics()
+
+
+Snippet 2:
+
+def greet(lang):
+    if lang == "en":
+       print ('Hello')
+    elif lang == "es":
+       print ('Hola')
+
+greet("en")
+greet("es")
+
+Hello
+Hola
+
+Snippet 3:
+
+def greet(lang):
+    if lang == "es":
+       return "Hola"
+    elif lang == "fr":
+       return "Bonjour"
+    else:
+       return "Hello"
+
+print(greet("en"), "Glenn")
+print(greet("es"), "Sally")
+print(greet("fr"), "Michael")
+
+Hello Glenn
+Hola Sally
+Bonjour Michael
+
+Snippet :
+
+def add(a, b):
+    c = a + b
+    return c
+
+x = add(3, 5)
+print(x)
+
+-------------- Loops and Iterations ----------------
+
+for, while
+
+Snippet:
+n=5
+while n > 0 :
+    print(n)
+    n = n - 1
+print('Done!')
+
+----- Indefinite loop: ---------------------
+
+n=5
+while n > 0 :
+    print(n)
+print('Done!')
+
+
+while True:
+    print ('infinite')
+
+
+break - used to come out of the loop
+continue - used to end the current iteration and go back to the top of the loop and execute the next iteration.
+
+
+
+For Loop: (Definite Loop)
+
+for i in [5,4,3,2,1]:
+    print(i)
+print('Done!')
+
+o/p:
+5
+4
+3
+2
+1
+Done!
+
+friends = ['Joseph','Glenn','Sally']
+for friend in friends:
+    print('Happy New Year:', friend)
+print('Done!')
+
+o/p:
+Happy New Year Joseph
+Happy New Year Glenn
+Happy New Year Sally
+Done!
+
+------ Finding Smallest Value -----------
+
+#Smallest Number:
+Smallest = None    #None is variable used for unknown value or absence of value
+for i in [-1, 2, 6, -40, -30]:
+    if Smallest is None:
+        Smallest = i
+    elif i < Smallest:
+        Smallest = i
+print ("Largest Number:", Smallest)
+
+o/p: -40
+
+
+
+---------- Assignment Program ------------------
+
+# Largest and Smallest Number using user input values
+largest = None
+smallest = None
+List = []
+while True :
+    sval = input("Enter the number: ")
+    if sval == "done" :
+        break
+    try : 
+        ival = int(sval)
+    except :
+        print("Invalid input")
+        continue
+    List.append(ival)
+
+# Finding Largest Value
+for largeval in List :
+    if largest is None :
+        largest = largeval
+    elif largeval > largest:
+        largest = largeval
+print("Maximum is", largest)
+
+# Finding Smallest Value
+for smallval in List :
+    if smallest is None :
+        smallest = smallval
+    elif smallval < smallest:
+        smallest = smallval
+print("Minimum is", smallest)
+
